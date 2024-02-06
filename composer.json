@@ -1,0 +1,54 @@
+{
+    "name": "joshcirre/laravel-appwrite",
+    "description": "A helper package for the Appwrite PHP SDK.",
+    "keywords": [
+        "joshcirre",
+        "laravel-appwrite"
+    ],
+    "homepage": "https://github.com/joshcirre/laravel-appwrite",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Josh Cirre",
+            "email": "josh@cir.re",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Joshcirre\\LaravelAppwrite\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Joshcirre\\LaravelAppwrite\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Joshcirre\\LaravelAppwrite\\LaravelAppwriteServiceProvider"
+            ],
+            "aliases": {
+                "LaravelAppwrite": "Joshcirre\\LaravelAppwrite\\LaravelAppwriteFacade"
+            }
+        }
+    }
+}
