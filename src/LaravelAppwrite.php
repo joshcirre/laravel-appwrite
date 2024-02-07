@@ -1,6 +1,6 @@
 <?php
 
-namespace Joshcirre\LaravelAppwrite;
+namespace JoshCirre\LaravelAppwrite;
 
 class LaravelAppwrite
 {

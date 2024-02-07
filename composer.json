@@ -16,21 +16,31 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0",
-        "illuminate/support": "^8.0"
+        "php": "^8.1",
+        "appwrite/appwrite": "^10.1",
+        "illuminate/contracts": "^10.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^6.0",
-        "phpunit/phpunit": "^9.0"
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^7.8",
+        "larastan/larastan": "^2.0.1",
+        "orchestra/testbench": "^8.8",
+        "pestphp/pest": "^2.20",
+        "pestphp/pest-plugin-arch": "^2.5",
+        "pestphp/pest-plugin-laravel": "^2.0",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "spatie/laravel-ray": "^1.26"
     },
     "autoload": {
         "psr-4": {
-            "Joshcirre\\LaravelAppwrite\\": "src"
+            "JoshCirre\\LaravelAppwrite\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Joshcirre\\LaravelAppwrite\\Tests\\": "tests"
+            "JoshCirre\\LaravelAppwrite\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -44,11 +54,13 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Joshcirre\\LaravelAppwrite\\LaravelAppwriteServiceProvider"
+                "JoshCirre\\LaravelAppwrite\\LaravelAppwriteServiceProvider"
             ],
             "aliases": {
-                "LaravelAppwrite": "Joshcirre\\LaravelAppwrite\\LaravelAppwriteFacade"
+                "LaravelAppwrite": "JoshCirre\\LaravelAppwrite\\LaravelAppwriteFacade"
             }
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

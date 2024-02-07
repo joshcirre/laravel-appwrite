@@ -1,7 +1,11 @@
 <?php
 
-namespace Joshcirre\LaravelAppwrite;
+namespace JoshCirre\LaravelAppwrite;
 
+use Appwrite\Client;
+use Appwrite\Services\Account;
+use Appwrite\Services\Databases;
+use Appwrite\Services\Storage;
 use Illuminate\Support\ServiceProvider;
 
 class LaravelAppwriteServiceProvider extends ServiceProvider
@@ -55,6 +59,32 @@ class LaravelAppwriteServiceProvider extends ServiceProvider
         // Register the main class to use with the facade
         $this->app->singleton('laravel-appwrite', function () {
             return new LaravelAppwrite;
+        });
+
+        $this->app->singleton(Client::class, function ($app) {
+            $client = new Client();
+
+            $client
+                ->setEndpoint(env('APPWRITE_ENDPOINT'))
+                ->setProject(env('APPWRITE_PROJECT'))
+                ->setKey(env('APPWRITE_KEY'));
+
+            return $client;
+        });
+
+        // Bind the Appwrite 'Databases' service
+        $this->app->singleton('appwrite.databases', function ($app) {
+            return new Databases($app->make(Client::class));
+        });
+
+        // Bind the Appwrite 'Account' service
+        $this->app->singleton('appwrite.account', function ($app) {
+            return new Account($app->make(Client::class));
+        });
+
+        // Bind the Appwrite 'Storage' service
+        $this->app->singleton('appwrite.storage', function ($app) {
+            return new Storage($app->make(Client::class));
         });
     }
 }

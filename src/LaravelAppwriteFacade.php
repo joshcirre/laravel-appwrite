@@ -1,7 +1,8 @@
 <?php
 
-namespace Joshcirre\LaravelAppwrite;
+namespace JoshCirre\LaravelAppwrite;
 
+use Appwrite\Client;
 use Illuminate\Support\Facades\Facade;
 
 /**
@@ -14,8 +15,31 @@ class LaravelAppwriteFacade extends Facade
      *
      * @return string
      */
+    // protected static function getFacadeAccessor()
+    // {
+    //     return 'laravel-appwrite';
+    // }
+
     protected static function getFacadeAccessor()
     {
-        return 'laravel-appwrite';
+        return Client::class; // The Client binding in the service provider
+    }
+
+    public static function databases()
+    {
+        // Returns the 'databases' service from the Appwrite client
+        return app('appwrite.databases');
+    }
+
+    public static function account()
+    {
+        // Returns the 'account' service from the Appwrite client
+        return app('appwrite.account');
+    }
+
+    public static function storage()
+    {
+        // Returns the 'storage' service from the Appwrite client
+        return app('appwrite.storage');
     }
 }
