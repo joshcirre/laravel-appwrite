@@ -1,10 +1,17 @@
-# Very short description of the package
+# Laravel Appwrite Helper for the Appwrite PHP SDK
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/joshcirre/laravel-appwrite.svg?style=flat-square)](https://packagist.org/packages/joshcirre/laravel-appwrite)
 [![Total Downloads](https://img.shields.io/packagist/dt/joshcirre/laravel-appwrite.svg?style=flat-square)](https://packagist.org/packages/joshcirre/laravel-appwrite)
 ![GitHub Actions](https://github.com/joshcirre/laravel-appwrite/actions/workflows/main.yml/badge.svg)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+This package allows you to use the [Appwrite](https://appwrite.io) PHP SDK as a Laravel Facade. While the Facade has current support for Databases, Account, and Storage, there are a lot of goals for this package in the near future.
+
+A lot of inspiration will be taken from the [Laravel MongoDB](https://github.com/mongodb/laravel-mongodb) package in order to seamlessly integrate Appwrite and it's offerings into your Laravel application.
+
+Plans for the Future:
+[] Direct storage integration using the Laravel Storage facade
+[] Model integration similar to Laravel MongoDB to create collections programatically and then use the Model to access the data.
+[] Laravel Breeze user authentication scaffold for Appwrite Accounts
 
 ## Installation
 
@@ -16,15 +23,29 @@ composer require joshcirre/laravel-appwrite
 
 ## Usage
 
+After installation, you'll have global access to the `LaravelAppwrite` facade. This facade will allow you to access the Appwrite SDK anywhere in your application.
+
+First, ensure that your .env variables are set:
+
+```env
+APPWRITE_ENDPOINT=https://cloud.appwrite.io/v1
+APPWRITE_PROJECT=projectId
+APPWRITE_KEY=yourkey
+```
+
+Here's how the helper function would look in your Laravel application:
 ```php
-// Usage description here
+LaravelAppwrite::databases()->createDocument('65b56d9b46ba4fbb32d0', '65bc8de91b474a7627b5', $id, [
+    'title' => $this->title,
+    'description' => $this->description,
+]);
+
+LaravelAppwrite::accounts()
+
+LaravelAppwrite::storage()
 ```
 
-### Testing
-
-```bash
-composer test
-```
+All of the methods available in the [Appwrite API](https://appwrite.io/docs/references) are available to the `LaravelAppwrite::` facade.
 
 ### Changelog
 
