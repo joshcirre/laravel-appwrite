@@ -1,0 +1,28 @@
+# Laravel specific files/directories
+.env
+vendor/
+node_modules/
+public/storage
+
+# IDE/Editor specific files/directories
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Laravel Mix specific files/directories
+npm-debug.log
+yarn-error.log
+yarn.lock
+mix-manifest.json
+
+# Testing specific files/directories
+/phpunit.xml
+/tests/
+
+# Miscellaneous
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+yarn.lock
