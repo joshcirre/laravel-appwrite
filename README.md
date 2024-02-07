@@ -2,7 +2,6 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/joshcirre/laravel-appwrite.svg?style=flat-square)](https://packagist.org/packages/joshcirre/laravel-appwrite)
 [![Total Downloads](https://img.shields.io/packagist/dt/joshcirre/laravel-appwrite.svg?style=flat-square)](https://packagist.org/packages/joshcirre/laravel-appwrite)
-![GitHub Actions](https://github.com/joshcirre/laravel-appwrite/actions/workflows/main.yml/badge.svg)
 
 This package allows you to use the [Appwrite](https://appwrite.io) PHP SDK as a Laravel Facade. While the Facade has current support for Databases, Account, and Storage, there are a lot of goals for this package in the near future.
 
