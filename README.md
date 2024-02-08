@@ -8,9 +8,9 @@ This package allows you to use the [Appwrite](https://appwrite.io) PHP SDK as a 
 A lot of inspiration will be taken from the [Laravel MongoDB](https://github.com/mongodb/laravel-mongodb) package in order to seamlessly integrate Appwrite and it's offerings into your Laravel application.
 
 Plans for the Future:
-[] Direct storage integration using the Laravel Storage facade
-[] Model integration similar to Laravel MongoDB to create collections programatically and then use the Model to access the data.
-[] Laravel Breeze user authentication scaffold for Appwrite Accounts
+- [ ] Direct storage integration using the Laravel Storage facade
+- [ ] Model integration similar to Laravel MongoDB to create collections programmatically and then use the Model to access the data.
+- [ ] Laravel Breeze user authentication scaffold for Appwrite Accounts
 
 ## Installation
 
