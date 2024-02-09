@@ -39,7 +39,7 @@ LaravelAppwrite::databases()->createDocument('65b56d9b46ba4fbb32d0', '65bc8de91b
     'description' => $this->description,
 ]);
 
-LaravelAppwrite::accounts()
+LaravelAppwrite::account()
 
 LaravelAppwrite::storage()
 ```
